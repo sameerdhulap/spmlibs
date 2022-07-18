@@ -43,8 +43,8 @@ git push
 
 # 6. Pusblish a new release with the same version of the repository A, and attach XCFramework in the Release metadata
 echo "Releasing the new version"
-gh release create "$NEW_VERSION" --generate-notes "./$FRAMEWORK_NAME.xcframework.zip"
+gh release create "scm$NEW_VERSION" --generate-notes "./$FRAMEWORK_NAME.xcframework.zip"
 
 # 7. Remove zip of XCFramework
 echo "delete downloaded zip file"
-#rm $FRAMEWORK_NAME.xcframework.zip
+rm $FRAMEWORK_NAME.xcframework.zip
