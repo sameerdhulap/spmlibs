@@ -1,5 +1,5 @@
 #!/bin/sh
-
+export GH_TOKEN="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"
 # Check for arguments
 if [ $# -eq 0 ]; then
     echo "No arguments provided. First argument has to be version, e.g.
@@ -41,8 +41,7 @@ git add --all -- :!$FRAMEWORK_NAME.xcframework.zip
 git commit -m "New $FRAMEWORK_NAME version $NEW_VERSION"
 git push
 
-# 6. Pusblish a new release with the same version of the repository A, and
-attach XCFramework in the Release metadata
+# 6. Pusblish a new release with the same version of the repository A, and attach XCFramework in the Release metadata
 echo "Releasing the new version"
 gh release create "$NEW_VERSION" --generate-notes "./$FRAMEWORK_NAME.xcframework.zip"
 
