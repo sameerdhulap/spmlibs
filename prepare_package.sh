@@ -1,5 +1,5 @@
 #!/bin/sh
-export GH_TOKEN="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"
+#export GH_TOKEN="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"
 # Check for arguments
 if [ $# -eq 0 ]; then
     echo "No arguments provided. First argument has to be version, e.g.
