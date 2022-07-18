@@ -3,7 +3,7 @@
 
 import PackageDescription
 
-let version = "1.0.4"
+let version = "1.0.5"
 let moduleName = "WoosmapGeofencing"
 let checksum = "419a55fc58e856f6597c38fc7e1796487c219fa9dd68c5ca3618c724973214b3"
 
@@ -18,6 +18,12 @@ let package = Package(
             targets: [moduleName]
         )
     ],
+    dependencies: [
+            // Surge Package
+            .package(url: "https://github.com/Jounce/Surge.git", from: "2.3.0"),
+            // Realm
+            .package(url: "https://github.com/realm/realm-cocoa", from: "10.5.1")
+        ],
     targets: [
         .binaryTarget(
             name: moduleName,
