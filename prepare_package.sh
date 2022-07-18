@@ -6,7 +6,7 @@ if [ $# -eq 0 ]; then
 '1.8.1'"
     exit 1
 fi
-
+clear
 # 1. Get params
 NEW_VERSION=$1
 FRAMEWORK_NAME="WoosmapGeofencing"
@@ -19,21 +19,17 @@ zip -r -X "$FRAMEWORK_NAME.xcframework.zip" "$FRAMEWORK_NAME.xcframework"
 
 # 2. Calculate checksum and store it
 echo "calculate new checksum"
-NEW_CHECKSUM=$(swift package compute-checksum
-$FRAMEWORK_NAME.xcframework.zip)
+NEW_CHECKSUM=$(swift package compute-checksum $FRAMEWORK_NAME.xcframework.zip)
 echo "print out new shasum for convenience reasons"
 echo "New checksum is $NEW_CHECKSUM"
 
 # 3. Replace all data from Package.swift manifest
 echo "replace name module information in package manifest"
-sed -E -i '' 's/let moduleName = ".+"/let moduleName =
-"'$FRAMEWORK_NAME\"/ Package.swift
+sed -E -i '' 's/let moduleName = ".+"/let moduleName = "'$FRAMEWORK_NAME\"/ Package.swift
 echo "replace version information in package manifest"
-sed -E -i '' 's/let version = ".+"/let version = "'$NEW_VERSION\"/
-Package.swift
+sed -E -i '' 's/let version = ".+"/let version = "'$NEW_VERSION\"/ Package.swift
 echo "replace checksum information in package manifest"
-sed -E -i '' 's/let checksum = ".+"/let checksum = "'$NEW_CHECKSUM\"/
-Package.swift
+sed -E -i '' 's/let checksum = ".+"/let checksum = "'$NEW_CHECKSUM\"/ Package.swift
 
 # 4. Print new content of manifest
 echo "print out package manifest for convenience reasons"
@@ -48,8 +44,7 @@ git push
 # 6. Pusblish a new release with the same version of the repository A, and
 attach XCFramework in the Release metadata
 echo "Releasing the new version"
-gh release create "$NEW_VERSION" --generate-notes
-"./$FRAMEWORK_NAME.xcframework.zip"
+gh release create "$NEW_VERSION" --generate-notes "./$FRAMEWORK_NAME.xcframework.zip"
 
 # 7. Remove zip of XCFramework
 echo "delete downloaded zip file"
