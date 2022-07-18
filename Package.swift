@@ -3,7 +3,7 @@
 
 import PackageDescription
 
-let version = "1.0.3"
+let version = "1.0.4"
 let moduleName = "WoosmapGeofencing"
 let checksum = "419a55fc58e856f6597c38fc7e1796487c219fa9dd68c5ca3618c724973214b3"
 
@@ -21,7 +21,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: moduleName,
-            url: "https://github.com/sameerdhulap/spmlibs/releases/download/\(version)/\(moduleName).xcframework.zip",
+            url: "https://github.com/sameerdhulap/spmlibs/releases/download/v\(version)/\(moduleName).xcframework.zip",
             checksum: checksum
         )
     ]
