@@ -3,9 +3,9 @@
 
 import PackageDescription
 
-let version = "1.0.10"
+let version = "1.0.11"
 let moduleName = "WoosmapGeofencing"
-let checksum = "e51de0c4c12d7ba0e672d93fd50b712178f64ff09a33dbc0368cb85a8b0fa4fb"
+let checksum = "8d738f9421f390c2cb72aefea07f36407be4386dc117d800151471695ff599d0"
 
 let package = Package(
     name: moduleName,
@@ -13,35 +13,34 @@ let package = Package(
         .iOS(.v13) //, .macCatalyst(.v15), .macOS(.v10_15)
     ],
     products: [
+//                .library(
+//                    name: moduleName,
+//                    targets: [moduleName]
+//                ),
         .library(
-            name: moduleName,
-            targets: [moduleName]
-        ),
-//        .library(
-//            name: "\(moduleName)Swift",
-//            targets: ["\(moduleName)Swift"]
-//        )
+            name: "\(moduleName)dummy",
+            targets: ["\(moduleName)dummy"]
+        )
     ],
     dependencies: [
-            // Surge Package
-            .package(url: "https://github.com/Jounce/Surge.git", from: "2.3.0"),
-            // Realm
-            .package(url: "https://github.com/realm/realm-cocoa", from: "10.5.1")
-        ],
+        // Surge Package
+        .package(url: "https://github.com/Jounce/Surge.git", from: "2.3.0"),
+        // Realm
+        .package(url: "https://github.com/realm/realm-cocoa", from: "10.5.1")
+    ],
     targets: [
-//        .target(
-//                    name: "\(moduleName)dummy",
-//                    dependencies: ["Surge","RealmSwift"],
-//                    path: ""
-//                ),
-//        .target(
-//                    name: "\(moduleName)dummy",
-//                    dependencies: ["Surge","RealmSwift"]
-//                ),
-        .binaryTarget(
-            name: moduleName,
-            url: "https://github.com/sameerdhulap/spmlibs/releases/download/v\(version)/\(moduleName).xcframework.zip",
-            checksum: checksum
+        .target(
+            name: "\(moduleName)dummy",
+            dependencies: [
+                .product(name: "RealmSwift", package: "realm-cocoa"),
+                .product(name: "Surge", package: "Surge"),
+                   ],
+            path: "dummy"
+//        ),
+//        .binaryTarget(
+//            name: moduleName,
+//            url: "https://github.com/sameerdhulap/spmlibs/releases/download/v\(version)/\(moduleName).xcframework.zip",
+//            checksum: checksum
         )
     ]
 )
