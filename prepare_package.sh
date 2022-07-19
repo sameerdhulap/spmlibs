@@ -17,7 +17,7 @@ rm -rf "$FRAMEWORK_NAME.xcframework"
 
 
 echo "Coping xcframework resources..."
-cp -r ""/Volumes/livestuff/Clients/woosmap/geofenceSDK/Enterprise/ReleaseProcess/2.0.10/cocoapod/$FRAMEWORK_NAME.xcframework" "$FRAMEWORK_NAME.xcframework"
+cp -r "/Volumes/livestuff/Clients/woosmap/geofenceSDK/Enterprise/ReleaseProcess/2.0.10/cocoapod/$FRAMEWORK_NAME.xcframework" "$FRAMEWORK_NAME.xcframework"
 
 echo "Compressing XCFramework..."
 zip -r -X "$FRAMEWORK_NAME.xcframework.zip" "$FRAMEWORK_NAME.xcframework"
