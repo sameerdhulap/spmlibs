@@ -3,9 +3,9 @@
 
 import PackageDescription
 
-let version = "1.0.11"
+let version = "1.0.12"
 let moduleName = "WoosmapGeofencing"
-let checksum = "8d738f9421f390c2cb72aefea07f36407be4386dc117d800151471695ff599d0"
+let checksum = "0664f81e82a3291a56639cc76a4eaa1516e1193d114cfc9a6972102c30c9cb4f"
 
 let package = Package(
     name: moduleName,
@@ -13,10 +13,10 @@ let package = Package(
         .iOS(.v13) //, .macCatalyst(.v15), .macOS(.v10_15)
     ],
     products: [
-//                .library(
-//                    name: moduleName,
-//                    targets: [moduleName]
-//                ),
+        .library(
+            name: moduleName,
+            targets: [moduleName]
+        ),
         .library(
             name: "\(moduleName)dummy",
             targets: ["\(moduleName)dummy"]
@@ -34,13 +34,13 @@ let package = Package(
             dependencies: [
                 .product(name: "RealmSwift", package: "realm-cocoa"),
                 .product(name: "Surge", package: "Surge"),
-                   ],
+            ],
             path: "dummy"
-//        ),
-//        .binaryTarget(
-//            name: moduleName,
-//            url: "https://github.com/sameerdhulap/spmlibs/releases/download/v\(version)/\(moduleName).xcframework.zip",
-//            checksum: checksum
+        ),
+        .binaryTarget(
+            name: moduleName,
+            url: "https://github.com/sameerdhulap/spmlibs/releases/download/v\(version)/\(moduleName).xcframework.zip",
+            checksum: checksum
         )
     ]
 )
