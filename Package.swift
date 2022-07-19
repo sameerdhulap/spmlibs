@@ -3,9 +3,9 @@
 
 import PackageDescription
 
-let version = "1.0.13"
+let version = "1.0.14"
 let moduleName = "WoosmapGeofencing"
-let checksum = "130becdac1ff379c49e034d7a9c66736bebd2cd1d73e911f22cc32d648f215dd"
+let checksum = "4b6325f21ca2f14c93cf4acca7c2214bbd73fde2054280416691faed62085bc1"
 
 let package = Package(
     name: moduleName,
@@ -14,7 +14,7 @@ let package = Package(
     ],
     products: [
         .library(
-            name: moduleName,
+            name: "\(moduleName)swift",
             targets: [moduleName]
         ),
         .library(
