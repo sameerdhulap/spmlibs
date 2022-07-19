@@ -3,9 +3,9 @@
 
 import PackageDescription
 
-let version = "1.0.8"
+let version = "1.0.9"
 let moduleName = "WoosmapGeofencing"
-let checksum = "f4126169fa76a7f3b8de8873712278b59fc3368bf9e93cc81d94cc27ac224a38"
+let checksum = "02dc5aa9d1025f383d4a49d59ff9a5b52c2148c545de2a8161876f57f042abf0"
 
 let package = Package(
     name: moduleName,
@@ -16,6 +16,10 @@ let package = Package(
         .library(
             name: moduleName,
             targets: [moduleName]
+        ),
+        .library(
+            name: "\(moduleName)Swift",
+            targets: ["\(moduleName)Swift"]
         )
     ],
     dependencies: [
@@ -25,11 +29,11 @@ let package = Package(
             .package(url: "https://github.com/realm/realm-cocoa", from: "10.5.1")
         ],
     targets: [
-//        .target(
-//                    name: "\(moduleName)dummy",
-//                    dependencies: ["Surge","RealmSwift"],
-//                    path: "WoosmapGeofencing.xcframework"
-//                ),
+        .target(
+                    name: "\(moduleName)dummy",
+                    dependencies: ["Surge","RealmSwift"],
+                    path: ""
+                ),
 //        .target(
 //                    name: "\(moduleName)dummy",
 //                    dependencies: ["Surge","RealmSwift"]
