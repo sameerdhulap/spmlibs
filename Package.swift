@@ -3,9 +3,9 @@
 
 import PackageDescription
 
-let version = "1.0.14"
+let version = "1.0.15"
 let moduleName = "WoosmapGeofencing"
-let checksum = "4b6325f21ca2f14c93cf4acca7c2214bbd73fde2054280416691faed62085bc1"
+let checksum = "5d12e2c2d3e594422563d0ca7cfdf7522480235ece82f2f7ce8136e5c6798599"
 
 let package = Package(
     name: moduleName,
@@ -14,12 +14,12 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "\(moduleName)swift",
+            name: moduleName,
             targets: [moduleName]
         ),
         .library(
-            name: "\(moduleName)dummy",
-            targets: ["\(moduleName)dummy"]
+            name: "\(moduleName)dependencies",
+            targets: ["\(moduleName)dependencies"]
         )
     ],
     dependencies: [
@@ -30,7 +30,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "\(moduleName)dummy",
+            name: "\(moduleName)dependencies",
             dependencies: [
                 .product(name: "RealmSwift", package: "realm-cocoa"),
                 .product(name: "Surge", package: "Surge"),
