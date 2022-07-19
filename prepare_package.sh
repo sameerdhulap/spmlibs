@@ -13,9 +13,15 @@ FRAMEWORK_NAME="WoosmapGeofencing"
 
 echo "Remove old xcframework resources..."
 rm -rf "$FRAMEWORK_NAME.xcframework.zip"
+rm -rf "$FRAMEWORK_NAME.xcframework"
+
+
+echo "Coping xcframework resources..."
+cp -r ""/Volumes/livestuff/Clients/woosmap/geofenceSDK/Enterprise/ReleaseProcess/2.0.10/cocoapod/$FRAMEWORK_NAME.xcframework" "$FRAMEWORK_NAME.xcframework"
 
 echo "Compressing XCFramework..."
 zip -r -X "$FRAMEWORK_NAME.xcframework.zip" "$FRAMEWORK_NAME.xcframework"
+rm -rf "$FRAMEWORK_NAME.xcframework"
 
 # 2. Calculate checksum and store it
 echo "calculate new checksum"
