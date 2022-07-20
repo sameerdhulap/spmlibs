@@ -1,5 +1,5 @@
 {
-  "1.0.16": "https://kit-downloads.fabric.io/ios/io.fabric.sdk.ios/1.10.2/io.fabric.sdk.ios-default.zip",
-  "1.0.15": "https://kit-downloads.fabric.io/ios/io.fabric.sdk.ios/1.10.1/io.fabric.sdk.ios-default.zip",
-  "1.0.14": "https://kit-downloads.fabric.io/ios/io.fabric.sdk.ios/1.10.0/io.fabric.sdk.ios-default.zip"
+  "1.0.16": "https://github.com/sameerdhulap/spmlibs/releases/download/v1.0.16/WoosmapGeofencing.xcframework.zip",
+  "1.0.15": "https://github.com/sameerdhulap/spmlibs/releases/download/v1.0.15/WoosmapGeofencing.xcframework.zip",
+  "1.0.14": "https://github.com/sameerdhulap/spmlibs/releases/download/v1.0.14/WoosmapGeofencing.xcframework.zip"
 }
