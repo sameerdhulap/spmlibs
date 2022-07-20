@@ -35,7 +35,7 @@ let package = Package(
                 .product(name: "RealmSwift", package: "realm-cocoa"),
                 .product(name: "Surge", package: "Surge"),
             ],
-            path: "dummy"
+            path: "dependencies"
         ),
         .binaryTarget(
             name: moduleName,
