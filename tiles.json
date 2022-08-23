@@ -25,94 +25,51 @@
   "vector_layers": [
     {
       "id": "indoor-level",
-      "type": "fill",
-      "source": "indoor-source",
-      "source-layer": "indoor",
-      "filter": [
-        "filter-==",
-        "indoor",
-        "level"
-      ],
-      "paint": {
-        "fill-color": "#fdfcfa"
-      }
+      "fields": {
+        "name": "String",
+        "level": "String",
+        "indoor": "String",
+        "highway": "String"
+      },
+      "maxzoom": 22,
+      "minzoom": 14,
+      "description": ""
     },
     {
       "id": "indoor-polygon",
-      "type": "fill",
-      "source": "indoor-source",
-      "source-layer": "indoor",
-      "filter": [
-        "filter-==",
-        "indoor",
-        "room"
-      ],
-      "paint": {
-        "fill-color": [
-          "case",
-          [
-            "all",
-            [
-              "has",
-              "access"
-            ],
-            [
-              "in",
-              [
-                "get",
-                "access"
-              ],
-              [
-                "literal",
-                [
-                  "no",
-                  "private"
-                ]
-              ]
-            ]
-          ],
-          "#F2F1F0",
-          [
-            "==",
-            "indoor",
-            "room"
-          ],
-          "#E4E9EC",
-          "#E4E9EC"
-        ]
-      }
+      "fields": {
+        "name": "String",
+        "level": "String",
+        "indoor": "String",
+        "highway": "String"
+      },
+      "maxzoom": 22,
+      "minzoom": 14,
+      "description": ""
     },
     {
       "id": "indoor-polygon-extrusion",
-      "type": "fill-extrusion",
-      "source": "indoor-source",
-      "source-layer": "indoor",
-      "filter": [
-        "filter-==",
-        "indoor",
-        "room"
-      ],
-      "paint": {
-        "fill-extrusion-color": "#DCEBEF",
-        "fill-extrusion-height": 2.5,
-        "fill-extrusion-base": 0,
-        "fill-extrusion-opacity": 1
-      }
+      "fields": {
+        "name": "String",
+        "level": "String",
+        "indoor": "String",
+        "highway": "String"
+      },
+      "maxzoom": 22,
+      "minzoom": 14,
+      "description": ""
     },
     {
       "id": "indoor-polygon-lines",
-      "type": "line",
-      "source": "indoor-source",
-      "source-layer": "indoor",
-      "filter": [
-        "filter-==",
-        "indoor",
-        "room"
-      ],
-      "paint": {
-        "line-color": "#bfbfbf",
-        "line-width": 1
-      }
+      "fields": {
+        "name": "String",
+        "level": "String",
+        "indoor": "String",
+        "highway": "String"
+      },
+      "maxzoom": 22,
+      "minzoom": 14,
+      "description": ""
     },
     {
       "id": "indoor-area",
@@ -153,18 +110,15 @@
     },
     {
       "id": "indoor-lines",
-      "type": "line",
-      "source": "indoor-source",
-      "source-layer": "indoor",
-      "filter": [
-        "filter-==",
-        "indoor",
-        "wall"
-      ],
-      "paint": {
-        "line-color": "gray",
-        "line-width": 2
-      }
+      "fields": {
+        "name": "String",
+        "level": "String",
+        "indoor": "String",
+        "highway": "String"
+      },
+      "maxzoom": 22,
+      "minzoom": 14,
+      "description": ""
     },
     {
       "id": "indoor-wall-extrusion",
@@ -278,28 +232,15 @@
     },
     {
       "id": "indoor-name",
-      "type": "symbol",
-      "source": "indoor-source",
-      "source-layer": "indoor",
-      "filter": [
-        "all"
-      ],
-      "layout": {
-        "text-font": [
-          "Noto Sans Regular"
-        ],
-        "text-field": [
-          "get",
-          "name"
-        ],
-        "text-max-width": 5,
-        "text-size": 14
+      "fields": {
+        "name": "String",
+        "level": "String",
+        "indoor": "String",
+        "highway": "String"
       },
-      "paint": {
-        "text-color": "#666",
-        "text-halo-color": "#ffffff",
-        "text-halo-width": 1
-      }
+      "maxzoom": 22,
+      "minzoom": 14,
+      "description": ""
     },
     {
       "id": "water",
