@@ -11,7 +11,8 @@
       "url": "https://develop-api.woosmap.com/188/maps/tiles.json?private_key=014ce707-0014-40c9-983f-8fd436d34d46"
     },
     "indoor-source": {
-      "type": "vector"
+      "type": "vector",
+      "url": "https://raw.githubusercontent.com/sameerdhulap/spmlibs/main/tiles.json"
     }
   },
   "sprite": "https://develop-sdk.woosmap.com/map/assets/sprite",
