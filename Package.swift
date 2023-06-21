@@ -3,9 +3,9 @@
 
 import PackageDescription
 
-let version = "1.0.16"
+let version = "3.0.16-beta5"
 let moduleName = "WoosmapGeofencing"
-let checksum = "8ccc1444d9f4ccd20eb1b9e3de18c9cc2070d853c7968d80cfa9600bb79eca6a"
+let checksum = "115593dfefc3f2cc1707274b46692dd23dc74502c0da5ec5fb3e8d130f89c922"
 
 let package = Package(
     name: moduleName,
@@ -17,14 +17,12 @@ let package = Package(
             name: moduleName,
             targets: [moduleName]
         ),
-        .library(
-            name: "\(moduleName)dependencies",
-            targets: ["\(moduleName)dependencies"]
-        )
+//        .library(
+//            name: "\(moduleName)dependencies",
+//            targets: ["\(moduleName)dependencies"]
+//        )
     ],
     dependencies: [
-        // Surge Package
-        .package(url: "https://github.com/Jounce/Surge.git", from: "2.3.0"),
         // Realm
         .package(url: "https://github.com/realm/realm-cocoa", from: "10.5.1")
     ],
@@ -33,13 +31,12 @@ let package = Package(
             name: "\(moduleName)dependencies",
             dependencies: [
                 .product(name: "RealmSwift", package: "realm-cocoa"),
-                .product(name: "Surge", package: "Surge"),
             ],
             path: "dependencies"
         ),
         .binaryTarget(
             name: moduleName,
-            url: "https://github.com/sameerdhulap/spmlibs/releases/download/v\(version)/\(moduleName).xcframework.zip",
+            url: "https://github.com/Woosmap/geofencing-ios-sdk-spm-release/releases/download/\(version)/\(moduleName).xcframework.zip",
             checksum: checksum
         )
     ]
