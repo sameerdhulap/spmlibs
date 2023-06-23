@@ -3,9 +3,9 @@
 
 import PackageDescription
 
-let version = "3.0.16-beta5"
+let version = "3.0.15"
 let moduleName = "WoosmapGeofencing"
-let checksum = "115593dfefc3f2cc1707274b46692dd23dc74502c0da5ec5fb3e8d130f89c922"
+let checksum = "0fdeabbe225562146c8497e1127fe73faccf76eef7cafb7a5848fd437cd29710"
 
 let package = Package(
     name: moduleName,
@@ -17,10 +17,6 @@ let package = Package(
             name: moduleName,
             targets: [moduleName]
         ),
-//        .library(
-//            name: "\(moduleName)dependencies",
-//            targets: ["\(moduleName)dependencies"]
-//        )
     ],
     dependencies: [
         // Realm
@@ -36,7 +32,7 @@ let package = Package(
         ),
         .binaryTarget(
             name: moduleName,
-            url: "https://github.com/Woosmap/geofencing-ios-sdk-spm-release/releases/download/\(version)/\(moduleName).xcframework.zip",
+            url: "https://github.com/Woosmap/geofencing-ios-sdk-spm-release/releases/download/3.0.15/\(moduleName).xcframework.zip",
             checksum: checksum
         )
     ]
