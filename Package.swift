@@ -25,7 +25,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: moduleName,
-            url: "https://github.com/Woosmap/geofencing-ios-sdk-spm-release/releases/download/\(version)/\(moduleName).xcframework.zip",
+            url: "https://github.com/Woosmap/geofencing-ios-sdk-spm-release/releases/download/3.0.16-beta5/WoosmapGeofencing.xcframework.zip",
             checksum: checksum
         )
     ]
