@@ -15,7 +15,7 @@ let package = Package(
     products: [
         .library(
             name: moduleName,
-            targets: [moduleName]
+            targets: [moduleName, "\(moduleName)dependencies"]
         ),
     ],
     dependencies: [
